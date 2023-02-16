@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <title>Calculator exercise</title>
+    </head>
+    <body>
+        <div class="grid-container">
+            <input id="display" disabled="disabled"> <!--disabled so can´t be typed!-->
+            
+            <input class="numerals1" type="button" value="1" onclick="chooseInput(1)">
+            <input class="numerals2" type="button" value="2" onclick="chooseInput(2)">
+            <input class="numerals3" type="button" value="3" onclick="chooseInput(3)">
+            <input class="numerals4" type="button" value="4" onclick="chooseInput(4)">
+            <input class="numerals5" type="button" value="5" onclick="chooseInput(5)">
+            <input class="numerals6" type="button" value="6" onclick="chooseInput(6)">
+            <input class="numerals7" type="button" value="7" onclick="chooseInput(7)">
+            <input class="numerals8" type="button" value="8" onclick="chooseInput(8)">
+            <input class="numerals9" type="button" value="9" onclick="chooseInput(9)">
+            <input class="numerals0" type="button" value="0" onclick="chooseInput(0)">
+                
+                       
+            <input class="operatorsPlus" type="button" value="+" onclick="chooseInput('+')">
+            <input class="operatorsMinus" type="button" value="-" onclick="chooseInput('-')">
+            <input class="operatorsMultiply" type="button" value="*" onclick="chooseInput('*')">
+            <input class="operatorsDivide" type="button" value="/" onclick="chooseInput('/')">
+            <input class="operatorsDot" type="button" value="." onclick="chooseInput('.')">
+            
+            <input id="result" type="button" value="=" onclick="result()">
+            <input id="clear" type="button" value="clear" onclick="clearAll()">
+            
+
+        </div>
+
+
+
+
+        <script>
+            
+            function chooseInput(input) {
+                document.getElementById("display").value += input;
+                //the += allows previous value be kept instead of replaced
+            }
+
+            function clearAll() {
+                document.getElementById("display").value = "";
+            }
+
+            function result() {
+                let x = document.getElementById("display").value;
+                document.getElementById("display").value = x + " = " + eval(x); 
+                //EVAL SHOULD NOT BE USED IN GENERAL
+                
+                //document.getElementById("result").style = 
+            //      "transition: background-color 2s; background-color: #5f26fc;"
+                               
+                
+
+            }
+        </script>
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </html>
+    
